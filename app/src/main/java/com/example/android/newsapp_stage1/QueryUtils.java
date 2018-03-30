@@ -151,13 +151,19 @@ public class QueryUtils {
         // is formatted, a JSONException exception object will be thrown.
         // Catch the exception so the app doesn't crash, and print the error message to the logs.
         try {
-
             // Create a JSONObject from the JSON response string
             JSONObject baseJsonResponse = new JSONObject(articleJSON);
 
+            JSONObject responseNode = null;
+            if (baseJsonResponse.has("response")) {
+                responseNode = baseJsonResponse.getJSONObject("response");
+            } else {
+                return null;
+            }
+
             // Extract the JSONArray associated with the key called "results",
             // which represents a list of features (or news).
-            JSONArray newsArray = baseJsonResponse.getJSONArray("results");
+            JSONArray newsArray = responseNode.getJSONArray("results");
 
             // For each news in the newsArray, create an {@link News} object
             for (int i = 0; i < newsArray.length(); i++) {
@@ -165,17 +171,17 @@ public class QueryUtils {
                 // Get a single news at position i within the list of news
                 JSONObject currentNews = newsArray.getJSONObject(i);
 
-                // Extract the value for the key called "title"
-                String title = currentNews.getString("webTitle");
-
                 // Extract the value for the key called "place"
-                String tag = currentNews.getString("sectionId");
+                String tag = currentNews.getString("sectionName");
 
                 // Extract the value for the key called "time"
                 String date = currentNews.getString("webPublicationDate");
 
+                // Extract the value for the key called "title"
+                String title = currentNews.getString("webTitle");
+
                 // Extract the value for the key called "url"
-                String url = currentNews.getString("apiUrl");
+                String url = currentNews.getString("webUrl");
 
                 // Create a new {@link News} object with the magnitude, location, time,
                 // and url from the JSON response.

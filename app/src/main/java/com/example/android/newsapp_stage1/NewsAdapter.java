@@ -40,36 +40,27 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Find the article at the given position in the list of news
         News currentNews = getItem(position);
 
-        // Find the TextView with view ID magnitude
+        // Find the TextView with view ID title
         TextView titleTextView = (TextView) listItemView.findViewById(R.id.title);
+        String title = currentNews.getmNewsTitle();
+        titleTextView.setText(title);
 
+        // Find the TextView with view ID tag
+        TextView tagTextView = (TextView) listItemView.findViewById(R.id.tag);
         // Get the original tag string from the News object
         String originalTag = currentNews.getmNewsTag();
-
-        // Find the TextView with view ID place
-        TextView tagTextView = (TextView) listItemView.findViewById(R.id.tag);
         // Display the tag of the current article in that TextView
         tagTextView.setText(originalTag);
-
-        // Create a new Date object from the date of the article
-        Date dateObject = new Date(currentNews.getmNewsDate());
 
         // Find the TextView with view ID date
         TextView dateTextView = (TextView) listItemView.findViewById(R.id.date);
         // Format the date string (i.e. "Mar 3, 1984")
-        String formattedDate = formatDate(dateObject);
+        String date = currentNews.getmNewsDate();
         // Display the date of the current article in that TextView
-        dateTextView.setText(formattedDate);
+        dateTextView.setText(date);
 
         // Return the whole list item layout (containing 3 TextViews) so that it can be shown in
         // the ListView.
         return listItemView;
-    }
-    /**
-     * Return the formatted date string (i.e. "Mar 3, 1984") from a Date object.
-     */
-    private String formatDate(Date dateObject) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, yyyy");
-        return dateFormat.format(dateObject);
     }
 }

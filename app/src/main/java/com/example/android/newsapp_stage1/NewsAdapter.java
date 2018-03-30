@@ -41,20 +41,22 @@ public class NewsAdapter extends ArrayAdapter<News> {
         News currentNews = getItem(position);
 
         // Find the TextView with view ID title
-        TextView titleTextView = (TextView) listItemView.findViewById(R.id.title);
+        TextView titleTextView = listItemView.findViewById(R.id.title);
+        // Get the original title string from the News object
         String title = currentNews.getmNewsTitle();
+        // Display the title of the current article in that TextView
         titleTextView.setText(title);
 
         // Find the TextView with view ID tag
-        TextView tagTextView = (TextView) listItemView.findViewById(R.id.tag);
+        TextView tagTextView = listItemView.findViewById(R.id.tag);
         // Get the original tag string from the News object
         String originalTag = currentNews.getmNewsTag();
         // Display the tag of the current article in that TextView
         tagTextView.setText(originalTag);
 
         // Find the TextView with view ID date
-        TextView dateTextView = (TextView) listItemView.findViewById(R.id.date);
-        // Format the date string (i.e. "Mar 3, 1984")
+        TextView dateTextView = listItemView.findViewById(R.id.date);
+        // Get the date string from the News object
         String date = currentNews.getmNewsDate();
         // Display the date of the current article in that TextView
         dateTextView.setText(date);

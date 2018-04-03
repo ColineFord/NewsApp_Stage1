@@ -61,13 +61,18 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Find the TextView with view ID date
         TextView dateTextView = listItemView.findViewById(R.id.date);
         // Get the date string from the News object
-        String date = currentNews.getmNewsDate();
+        String date = getDate(currentNews.getmNewsDate());
         // Display the date of the current article in that TextView
         dateTextView.setText(date);
 
         // Return the whole list item layout (containing 3 TextViews) so that it can be shown in
         // the ListView.
         return listItemView;
+    }
+
+    private String getDate(String date) {
+        String[] parts = date.split("T");
+        return parts[0];
     }
 
     /**

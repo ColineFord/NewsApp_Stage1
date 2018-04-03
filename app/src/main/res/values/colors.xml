@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#F57C00</color>
+    <color name="colorPrimaryDark">#E65100</color>
+    <color name="colorAccent">#FFA726</color>
+
+    <!-- Color for the Music tag -->
+    <color name="musicTag">#06AED5</color>
+
+    <!-- Color for the Travel tag -->
+    <color name="travelTag">#00C853</color>
+
+    <!-- Color for the Teacher Network tag -->
+    <color name="teacher_networkTag">#FFB300</color>
+
+    <!-- Color for the Guardian Masterclasses tag -->
+    <color name="guardian_masterclassesTag">#FF7043</color>
+
+    <!-- Color for the World news tag -->
+    <color name="world_newsTag">#304FFE</color>
+
+    <!-- Color for the Stage tag -->
+    <color name="stage">#673AB7</color>
+
+    <!-- Color for the any other tags -->
+    <color name="magnitude10plus">#AD1457</color>
+    <color name="background_blue">#E3F2FD</color>
+    <color name="white">#FFFFFF</color>
+    <color name="article_title_pink">#D81159</color>
+    <color name="article_date_blue">#283593</color>
 </resources>

@@ -1,15 +1,14 @@
 package com.example.android.newsapp_stage1;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by Coline on 26/03/2018.
@@ -54,6 +53,11 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Display the tag of the current article in that TextView
         tagTextView.setText(originalTag);
 
+        // Get the appropriate background color based on the current earthquake magnitude
+        int tagColor = getTagValue(currentNews.getmNewsTag());
+        // Set the color on the magnitude circle
+        tagTextView.setTextColor(tagColor);
+
         // Find the TextView with view ID date
         TextView dateTextView = listItemView.findViewById(R.id.date);
         // Get the date string from the News object
@@ -64,5 +68,33 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Return the whole list item layout (containing 3 TextViews) so that it can be shown in
         // the ListView.
         return listItemView;
+    }
+
+    private int getTagValue(String tag) {
+        int tagColorResourceId;
+        switch (tag) {
+            case "Music":
+                tagColorResourceId = R.color.musicTag;
+                break;
+            case "Travel":
+                tagColorResourceId = R.color.travelTag;
+                break;
+            case "Teacher Network":
+                tagColorResourceId = R.color.teacher_networkTag;
+                break;
+            case "Guardian Masterclasses":
+                tagColorResourceId = R.color.guardian_masterclassesTag;
+                break;
+            case "World news":
+                tagColorResourceId = R.color.world_newsTag;
+                break;
+            case "Stage":
+                tagColorResourceId = R.color.stage;
+                break;
+            default:
+                tagColorResourceId = R.color.magnitude10plus;
+                break;
+        }
+        return ContextCompat.getColor(getContext(), tagColorResourceId);
     }
 }

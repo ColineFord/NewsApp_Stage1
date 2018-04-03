@@ -5,27 +5,34 @@ package com.example.android.newsapp_stage1;
  */
 
 public class News {
-    /** Title of the news article */
+    /**
+     * Title of the news article
+     */
     private String mNewsTitle;
 
-    /** Tag of the news article (ex: Society, Politics...) */
+    /**
+     * Tag of the news article (ex: Travel, Music...)
+     */
     private String mNewsTag;
 
-    /** Time of article */
+    /**
+     * Date the article was published
+     */
     private String mNewsDate;
 
-    /** Website URL of the article */
+    /**
+     * Website URL of the article
+     */
     private String mUrl;
-
 
     /**
      * Create a new News object.
      *
      * @param newsTitle is the title
-     * @param newsTag is the tag
-     * @param newsDate is the time in milliseconds (from the Epoch) when the
-     * article came out
-     * @param url is the website URL to find more details about the article
+     * @param newsTag   is the tag
+     * @param newsDate  is the time in milliseconds (from the Epoch) when the
+     *                  article came out
+     * @param url       is the website URL to find more details about the article
      */
     public News(String newsTitle, String newsTag, String newsDate, String url) {
         mNewsTitle = newsTitle;

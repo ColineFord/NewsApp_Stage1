@@ -20,7 +20,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
      * Create a new {@link NewsAdapter} object.
      *
      * @param context is the current context (i.e. Activity) that the adapter is being created in.
-     * @param news is the list of {@link News}s to be displayed.
+     * @param news    is the list of {@link News}s to be displayed.
      */
     public NewsAdapter(Context context, ArrayList<News> news) {
         super(context, 0, news);
@@ -53,9 +53,9 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Display the tag of the current article in that TextView
         tagTextView.setText(originalTag);
 
-        // Get the appropriate background color based on the current earthquake magnitude
+        // Get the appropriate background color based on the current article tag
         int tagColor = getTagValue(currentNews.getmNewsTag());
-        // Set the color on the magnitude circle
+        // Set the text color of the tag TextView
         tagTextView.setTextColor(tagColor);
 
         // Find the TextView with view ID date
@@ -70,6 +70,11 @@ public class NewsAdapter extends ArrayAdapter<News> {
         return listItemView;
     }
 
+    /**
+     * Return the color for the tag TextView based on the tag String of the article.
+     *
+     * @param tag of the article
+     */
     private int getTagValue(String tag) {
         int tagColorResourceId;
         switch (tag) {
@@ -92,7 +97,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
                 tagColorResourceId = R.color.stage;
                 break;
             default:
-                tagColorResourceId = R.color.magnitude10plus;
+                tagColorResourceId = R.color.defaultTag;
                 break;
         }
         return ContextCompat.getColor(getContext(), tagColorResourceId);

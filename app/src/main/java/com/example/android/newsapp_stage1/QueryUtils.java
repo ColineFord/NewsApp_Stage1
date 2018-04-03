@@ -16,7 +16,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -172,19 +171,19 @@ public class QueryUtils {
                 // Get a single news at position i within the list of news
                 JSONObject currentNews = newsArray.getJSONObject(i);
 
-                // Extract the value for the key called "place"
+                // Extract the value for the key called "sectionName"
                 String tag = currentNews.getString("sectionName");
 
-                // Extract the value for the key called "time"
+                // Extract the value for the key called "webPublicationDate"
                 String date = currentNews.getString("webPublicationDate");
 
-                // Extract the value for the key called "title"
+                // Extract the value for the key called "webTitle"
                 String title = currentNews.getString("webTitle");
 
-                // Extract the value for the key called "url"
+                // Extract the value for the key called "webUrl"
                 String url = currentNews.getString("webUrl");
 
-                // Create a new {@link News} object with the magnitude, location, time,
+                // Create a new {@link News} object with the title, tag, date,
                 // and url from the JSON response.
                 News article = new News(title, tag, date, url);
 
@@ -202,5 +201,4 @@ public class QueryUtils {
         // Return the list of news
         return news;
     }
-
 }

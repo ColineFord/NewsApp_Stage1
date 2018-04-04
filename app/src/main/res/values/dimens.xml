@@ -6,6 +6,6 @@
     <dimen name="tag_padding">2dp</dimen>
     <dimen name="tag_text_size">13sp</dimen>
     <dimen name="date_padding">8dp</dimen>
-    <dimen name="date_text_size">12sp</dimen>
+    <dimen name="date_text_size">14sp</dimen>
     <dimen name="list_item_height">150dp</dimen>
 </resources>

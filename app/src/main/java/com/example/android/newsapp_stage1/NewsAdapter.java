@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -75,8 +76,13 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
         // Find the TextView with view ID date
         TextView dateTextView = listItemView.findViewById(R.id.date);
-        // Get the date string from the News object
-        String date = getDate(currentNews.getmNewsDate());
+
+        // Format the current time.
+        SimpleDateFormat formatter
+                = new SimpleDateFormat ("EEE d MMM, yyyy");
+        Date currentTime_1 = new Date();
+        String date = formatter.format(currentTime_1);
+
         // Display the date of the current article in that TextView
         dateTextView.setText(date);
 
@@ -84,11 +90,6 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Return the whole list item layout (containing 3 TextViews) so that it can be shown in
         // the ListView.
         return listItemView;
-    }
-
-    private String getDate(String date) {
-        String[] parts = date.split("T");
-        return parts[0];
     }
 
     /**

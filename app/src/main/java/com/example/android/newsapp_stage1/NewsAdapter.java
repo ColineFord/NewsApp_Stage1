@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Coline on 26/03/2018.
@@ -46,6 +47,20 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Display the title of the current article in that TextView
         titleTextView.setText(title);
 
+        // Find the TextView with view ID author
+        TextView authorTextView = listItemView.findViewById(R.id.author);
+        if(currentNews.hasAuthor()) {
+            // Get the author string from the News object
+            String author = currentNews.getmNewsAuthor();
+            // Display the title of the current article in that TextView
+            authorTextView.setText(author);
+            // Make sure the view is visible
+            authorTextView.setVisibility(View.VISIBLE);
+        } else {
+            // Otherwise hide the ImageView (set visibility to GONE)
+            authorTextView.setVisibility(View.GONE);
+        }
+
         // Find the TextView with view ID tag
         TextView tagTextView = listItemView.findViewById(R.id.tag);
         // Get the original tag string from the News object
@@ -64,6 +79,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
         String date = getDate(currentNews.getmNewsDate());
         // Display the date of the current article in that TextView
         dateTextView.setText(date);
+
 
         // Return the whole list item layout (containing 3 TextViews) so that it can be shown in
         // the ListView.

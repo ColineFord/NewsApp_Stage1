@@ -24,6 +24,10 @@ import java.util.List;
 
 public class QueryUtils {
 
+    private static final int READ_TIMEOUT = 1000;
+    private static final int CONNECT_TIMEOUT = 1500;
+    private static final int HTTP_RESPONSE_IS_OK = 200;
+
     /**
      * Tag for the log messages
      */
@@ -87,12 +91,14 @@ public class QueryUtils {
         InputStream inputStream = null;
         try {
             urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setReadTimeout(READ_TIMEOUT /* milliseconds */);
+            urlConnection.setConnectTimeout(CONNECT_TIMEOUT /* milliseconds */);
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
 
             // If the request was successful (response code 200),
             // then read the input stream and parse the response.
-            if (urlConnection.getResponseCode() == 200) {
+            if (urlConnection.getResponseCode() == HTTP_RESPONSE_IS_OK) {
                 inputStream = urlConnection.getInputStream();
                 jsonResponse = readFromStream(inputStream);
             } else {
@@ -183,12 +189,26 @@ public class QueryUtils {
                 // Extract the value for the key called "webUrl"
                 String url = currentNews.getString("webUrl");
 
-                // Create a new {@link News} object with the title, tag, date,
-                // and url from the JSON response.
-                News article = new News(title, tag, date, url);
-
-                // Add the new {@link News} to the list of news.
-                news.add(article);
+                JSONArray tagsArray = currentNews.getJSONArray("tags");
+                if (tagsArray.length() > 0) {
+                    for (int author = 0; author < tagsArray.length(); author++){
+                        JSONObject currentAuthor = tagsArray.getJSONObject(author);
+                        String authors = currentAuthor.getString("webTitle");
+                        // Create a new {@link News} object with the title, tag, date,
+                        // and url from the JSON response.
+                        News article = new News(title, authors, tag, date, url);
+                        // Add the new {@link News} to the list of news.
+                        news.add(article);
+                        break;
+                    }
+                } else {
+                    // Create a new {@link News} object with the title, tag, date,
+                    // and url from the JSON response.
+                    News article = new News(title, tag, date, url);
+                    // Add the new {@link News} to the list of news.
+                    news.add(article);
+                    break;
+                }
             }
 
         } catch (JSONException e) {

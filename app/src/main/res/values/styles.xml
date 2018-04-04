@@ -8,4 +8,48 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TitleTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">57dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/title_margin</item>
+        <item name="android:layout_marginRight">@dimen/title_margin</item>
+        <item name="android:layout_marginTop">@dimen/title_margin</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textColor">@color/article_title_pink</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="Linear_Tag_Date">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/title_margin</item>
+        <item name="android:layout_marginRight">@dimen/title_margin</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="tag_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">start</item>
+        <item name="android:padding">@dimen/tag_padding</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/tag_text_size</item>
+    </style>
+
+    <style name="date_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">end</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">end</item>
+        <item name="android:padding">@dimen/date_padding</item>
+        <item name="android:textColor">@color/article_date_blue</item>
+        <item name="android:textSize">@dimen/date_text_size</item>
+    </style>
+
 </resources>

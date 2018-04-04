@@ -25,7 +25,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
      * URL for news data from the Guardian dataset
      */
     private static final String GARDIAN_REQUEST_URL =
-            "https://content.guardianapis.com/search?q=music&api-key=test";
+            "https://content.guardianapis.com/search?q=music&api-key=test&show-tags=contributor";
 
     /**
      * Adapter for the list of news

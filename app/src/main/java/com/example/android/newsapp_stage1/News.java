@@ -11,6 +11,12 @@ public class News {
     private String mNewsTitle;
 
     /**
+     * Author of the news article
+     */
+    private String mNewsAuthor = HAS_AUTHOR;
+    private static String HAS_AUTHOR = "";
+
+    /**
      * Tag of the news article (ex: Travel, Music...)
      */
     private String mNewsTag;
@@ -24,6 +30,24 @@ public class News {
      * Website URL of the article
      */
     private String mUrl;
+
+    /**
+     * Create a new News object.
+     *
+     * @param newsTitle is the title
+     * @param newsAuthor is the author
+     * @param newsTag   is the tag
+     * @param newsDate  is the time in milliseconds (from the Epoch) when the
+     *                  article came out
+     * @param url       is the website URL to find more details about the article
+     */
+    public News(String newsTitle, String newsAuthor, String newsTag, String newsDate, String url) {
+        mNewsTitle = newsTitle;
+        mNewsAuthor = newsAuthor;
+        mNewsTag = newsTag;
+        mNewsDate = newsDate;
+        mUrl = url;
+    }
 
     /**
      * Create a new News object.
@@ -49,6 +73,13 @@ public class News {
     }
 
     /**
+     * Get the title of the news article.
+     */
+    public String getmNewsAuthor() {
+        return mNewsAuthor;
+    }
+
+    /**
      * Get the tag of the news article.
      */
     public String getmNewsTag() {
@@ -67,6 +98,10 @@ public class News {
      */
     public String getmUrl() {
         return mUrl;
+    }
+
+    public boolean hasAuthor() {
+        return mNewsTitle != HAS_AUTHOR;
     }
 
 }

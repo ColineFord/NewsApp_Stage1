@@ -6,11 +6,7 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/article_margin"
-        android:background="@color/white"
-        android:orientation="vertical">
+        style="@style/article_layout">
 
         <TextView
             android:id="@+id/title"
@@ -18,14 +14,8 @@
             tools:text="Long title of the article that can be over 2 lines" />
 
         <TextView
+            style="@style/author_style"
             android:id="@+id/author"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/tag_padding"
-            android:layout_marginEnd="@dimen/title_margin"
-            android:layout_marginLeft="@dimen/title_margin"
-            android:layout_marginRight="@dimen/title_margin"
-            android:layout_marginStart="@dimen/title_margin"
             tools:text="David Levene"/>
 
         <LinearLayout
@@ -41,7 +31,7 @@
             <TextView
                 style="@style/date_style"
                 android:id="@+id/date"
-                tools:text="Mar 6, 2010" />
+                tools:text="mer 4 avr, 2018" />
 
         </LinearLayout>
 

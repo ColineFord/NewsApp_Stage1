@@ -199,7 +199,6 @@ public class QueryUtils {
                         News article = new News(title, authors, tag, date, url);
                         // Add the new {@link News} to the list of news.
                         news.add(article);
-                        break;
                     }
                 } else {
                     // Create a new {@link News} object with the title, tag, date,
@@ -207,7 +206,6 @@ public class QueryUtils {
                     News article = new News(title, tag, date, url);
                     // Add the new {@link News} to the list of news.
                     news.add(article);
-                    break;
                 }
             }
 

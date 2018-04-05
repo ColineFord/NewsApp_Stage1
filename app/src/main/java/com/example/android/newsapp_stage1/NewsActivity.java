@@ -19,9 +19,19 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class NewsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>> {
 
     private static final String LOG_TAG = NewsActivity.class.getName();
+
+    // Find a reference to the {@link ListView} in the layout
+    @BindView(R.id.list)
+    ListView newsListView;
+
+    @BindView(R.id.loading_indicator)
+    View loadingIndicator;
 
     /**
      * URL for news data from the Guardian dataset
@@ -44,8 +54,8 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.news_activity);
 
-        // Find a reference to the {@link ListView} in the layout
-        ListView newsListView = findViewById(R.id.list);
+        // bind the view using butterknife
+        ButterKnife.bind(this);
 
         mEmptyStateTextView = findViewById(R.id.empty_view);
         newsListView.setEmptyView(mEmptyStateTextView);
@@ -103,7 +113,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         } else {
             // Otherwise, display error
             // First, hide loading indicator so error message will be visible
-            View loadingIndicator = findViewById(R.id.loading_indicator);
             loadingIndicator.setVisibility(View.GONE);
 
             // Update empty state with no connection error message
@@ -126,7 +135,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> news) {
         // Hide loading indicator because the data has been loaded
-        View loadingIndicator = findViewById(R.id.loading_indicator);
         loadingIndicator.setVisibility(View.GONE);
 
         // Set empty state text to display "No articles found."

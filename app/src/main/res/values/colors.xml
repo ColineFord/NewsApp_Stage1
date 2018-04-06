@@ -22,6 +22,18 @@
     <!-- Color for the Stage tag -->
     <color name="stage">#673AB7</color>
 
+    <!-- Color for the Film tag -->
+    <color name="film">#78909C</color>
+
+    <!-- Color for the Fashion tag -->
+    <color name="fashion">#EF9A9A</color>
+
+    <!-- Color for the Sport tag -->
+    <color name="sport">#1DE9B6</color>
+
+    <!-- Color for the Culture tag -->
+    <color name="culture">#FFD54F</color>
+
     <!-- Color for the any other tags -->
     <color name="defaultTag">#AD1457</color>
 

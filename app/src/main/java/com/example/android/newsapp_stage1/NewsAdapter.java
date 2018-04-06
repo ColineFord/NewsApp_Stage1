@@ -118,6 +118,18 @@ public class NewsAdapter extends ArrayAdapter<News> {
             case "Stage":
                 tagColorResourceId = R.color.stage;
                 break;
+            case "Film":
+                tagColorResourceId = R.color.film;
+                break;
+            case "Fashion":
+                tagColorResourceId = R.color.fashion;
+                break;
+            case "Culture":
+                tagColorResourceId = R.color.culture;
+                break;
+            case "Sport":
+                tagColorResourceId = R.color.sport;
+                break;
             default:
                 tagColorResourceId = R.color.defaultTag;
                 break;

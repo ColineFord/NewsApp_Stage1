@@ -150,7 +150,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         // buildUpon prepares the baseUri that we just parsed so we can add query parameters to it
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
-        // Append query parameter and its value. For example, the `format=geojson`
+        // Append query parameter and its value. For example, the order-by: 'Relevance', 'Newest'...
         uriBuilder.appendQueryParameter("api-key", "test");
         uriBuilder.appendQueryParameter("show-tags", "contributor");
         uriBuilder.appendQueryParameter("page-size", "20");

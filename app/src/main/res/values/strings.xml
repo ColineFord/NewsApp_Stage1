@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NewsApp_Stage1</string>
+    <string name="app_name">NewsApp_Stage2</string>
     <string name="no_internet_connection">No internet connection.\n Check your internet connection, once you have
         internet signal try to restart the app</string>
     <string name="no_articles">No articles found.\n Check your internet connection and try again.</string>
@@ -57,5 +57,21 @@
     <!-- Label for section Stage option [CHAR LIMIT=20] -->
     <string name="settings_section_stage_label">Stage</string>
     <string name="settings_section_stage_value" translatable="false">stage</string>
+
+    <!-- Label for section Film option [CHAR LIMIT=20] -->
+    <string name="settings_section_film_label">Film</string>
+    <string name="settings_section_film_value" translatable="false">film</string>
+
+    <!-- Label for section Culture option [CHAR LIMIT=20] -->
+    <string name="settings_section_culture_label">Culture</string>
+    <string name="settings_section_culture_value" translatable="false">culture</string>
+
+    <!-- Label for section Fashion option [CHAR LIMIT=20] -->
+    <string name="settings_section_fashion_label">Fashion</string>
+    <string name="settings_section_fashion_value" translatable="false">fashion</string>
+
+    <!-- Label for section Sport option [CHAR LIMIT=20] -->
+    <string name="settings_section_sport_label">Sport</string>
+    <string name="settings_section_sport_value" translatable="false">sport</string>
 
 </resources>

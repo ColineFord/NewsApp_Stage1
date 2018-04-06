@@ -6,4 +6,56 @@
 
     <string name="settings_menu_item">Settings</string>
     <string name="settings_title">News Settings</string>
+
+    <!-- Strings For Order-By Preference [CHAR LIMIT=30] -->
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order_by</string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_relevance_value</string>
+
+    <!-- Label for order-by relevance option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_relevance_label">Relevance</string>
+    <string name="settings_order_by_relevance_value" translatable="false">relevance</string>
+
+    <!-- Label for order-by newest option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_newest_label">Newest</string>
+    <string name="settings_order_by_newest_value" translatable="false">newest</string>
+
+    <!-- Label for order-by oldest option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_oldest_label">Oldest</string>
+    <string name="settings_order_by_oldest_value" translatable="false">oldest</string>
+
+
+    <!-- Strings For Section Preference [CHAR LIMIT=30] -->
+    <string name="settings_section_label">Section</string>
+    <string name="settings_section_key" translatable="false">section</string>
+    <string name="settings_section_default" translatable="false">@string/settings_section_all_value</string>
+
+    <!-- Label for all sections [CHAR LIMIT=20] -->
+    <string name="settings_section_all_label">All</string>
+    <string name="settings_section_all_value" translatable="false"></string>
+
+    <!-- Label for section Travel option [CHAR LIMIT=20] -->
+    <string name="settings_section_travel_label">Travel</string>
+    <string name="settings_section_travel_value" translatable="false">travel</string>
+
+    <!-- Label for section Music option [CHAR LIMIT=20] -->
+    <string name="settings_section_music_label">Music</string>
+    <string name="settings_section_music_value" translatable="false">music</string>
+
+    <!-- Label for section Teacher Network option [CHAR LIMIT=20] -->
+    <string name="settings_section_teacher_network_label">Teacher Network</string>
+    <string name="settings_section_teacher_network_value" translatable="false">teacher-network</string>
+
+    <!-- Label for section Guardian Masterclasses option [CHAR LIMIT=20] -->
+    <string name="settings_section_guardian_masterclasses_label">Guardian Masterclasses</string>
+    <string name="settings_section_guardian_masterclasses_value" translatable="false">guardian-masterclasses</string>
+
+    <!-- Label for section World news option [CHAR LIMIT=20] -->
+    <string name="settings_section_world_news_label">World news</string>
+    <string name="settings_section_world_news_value" translatable="false">world</string>
+
+    <!-- Label for section Stage option [CHAR LIMIT=20] -->
+    <string name="settings_section_stage_label">Stage</string>
+    <string name="settings_section_stage_value" translatable="false">stage</string>
+
 </resources>
